@@ -9,10 +9,11 @@ export class AuthGuardService implements CanActivate {
     canActivate(): boolean {
         this.data = localStorage.getItem('userData');
         this.data = JSON.parse(this.data);
-        if (this.data.status && this.data.status == true && this.data.token) {
+        if (this.data && this.data.token) {
             return true;
+        } else {
+            this.router.navigate(['login']);
+            return false;
         }
-        this.router.navigate(['login']);
-        return false;
     }
 }

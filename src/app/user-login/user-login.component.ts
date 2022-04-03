@@ -21,14 +21,14 @@ export class UserLoginComponent implements OnInit {
       email: ['', [Validators.required]],
       password: ['', [Validators.required]],
     });
-    
+
   }
 
   login() {
     if (this.loginForm.valid) {
       this.auth.userLogin(this.loginForm.value).subscribe((res: any) => {
         if (res.status = true) {
-          const jsonData = JSON.stringify(res.data)
+          const jsonData = JSON.stringify(res.data);
           localStorage.setItem('userData', jsonData);
           this.router.navigate(['/home']);
         }else{
