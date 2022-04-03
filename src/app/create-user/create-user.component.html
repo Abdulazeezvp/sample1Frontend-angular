@@ -1,0 +1,30 @@
+<div>
+    <div>
+
+        <h2>Register As New User</h2>
+    </div>
+    <div>
+        <form [formGroup]="userForm">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" formControlName="name">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" formControlName="email">
+            </div>
+            <div>
+                <label for="mobile">Mobile Number</label>
+                <input type="text" name="mobile" id="mobile" formControlName="mobile">
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" formControlName="password">
+            </div>
+           
+            <div>
+                <input type="button" value="Register" (click)="createUser()">
+            </div>
+        </form>
+    </div>
+</div>
